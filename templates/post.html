@@ -11,7 +11,7 @@
     />
   </th:block>
   <th:block th:fragment="hero">
-    <section th:unless="${#strings.isEmpty(post.spec.cover)}">
+    <section th:unless="${#strings.isEmpty(post.spec.cover)}" th:if="${theme.config.my.enable_page_bg_image}">
       <div class="relative flex items-center" th:styleappend="|height:${theme.config.post.cover_height ?: '24rem'}|">
         <div
           class="before:z-1 relative size-full bg-cover bg-center bg-no-repeat before:absolute before:inset-0 before:bg-black/40"
