@@ -1,39 +1,4 @@
 <footer th:if="${theme.config.footer.style == 'style_1'}" class="mt-10 bg-white py-8 dark:bg-slate-800">
-  <div class="mx-auto max-w-7xl px-4 sm:flex sm:items-center sm:justify-between lg:px-6">
-    <a href="/" class="mb-4 flex items-center justify-center sm:mb-0 sm:justify-start">
-      <img
-        th:if="${not #strings.isEmpty(theme.config.footer.logo)} or ${not #strings.isEmpty(site.logo)}"
-        th:src="${theme.config.footer.logo ?: site.logo}"
-        class="mr-3 size-8"
-        th:alt="${site.title}"
-      />
-      <span
-        class="self-center whitespace-nowrap text-2xl font-semibold dark:text-slate-50"
-        th:text="${theme.config.footer.title ?: site.title}"
-      >
-      </span>
-    </a>
-    <th:block
-      th:unless="${#strings.isEmpty(theme.config.footer.right_menu)} and ${#strings.isEmpty(theme.config.footer.menu)}"
-    >
-      <ul
-        th:with="menu = ${menuFinder.getByName(theme.config.footer.right_menu ?: theme.config.footer.menu)}"
-        class="mb-6 flex flex-wrap items-center justify-center space-x-4 text-sm text-gray-500 dark:text-slate-200 sm:mb-0 sm:justify-start md:space-x-6"
-      >
-        <li th:each="menuItem : ${menu.menuItems}">
-          <a
-            th:href="@{${menuItem.status.href}}"
-            class="transition-all hover:text-gray-900 hover:underline dark:hover:text-white"
-            th:text="${menuItem.status.displayName}"
-            th:target="${menuItem.spec.target?.value}"
-          ></a>
-        </li>
-      </ul>
-    </th:block>
-
-    <th:block th:replace="~{modules/footer-social}" />
-  </div>
-  <hr class="my-6 border-gray-100 dark:border-slate-700 sm:mx-auto lg:my-8" />
   <div class="space-y-1">
     <span
       class="mx-auto block max-w-7xl px-4 text-center text-sm text-gray-500 dark:text-slate-300 lg:px-6"
