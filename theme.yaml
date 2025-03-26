@@ -5,21 +5,22 @@ metadata:
   annotations:
     # Add supports for Halo App Store
     # https://halo.run/store/apps/app-KgWqR
+    # 猜测上架应用商店需要申请这个id
     "store.halo.run/app-id": "app-KgWqR"
 spec:
   displayName: Earth
   author:
-    name: Halo
-    website: https://www.halo.run
-  description: Default theme for Halo 2.0
+    name: 程序员Zero
+    website: https://www.zero0.fun
+  description: Halo2.0默认主题的定制版
   logo: https://www.halo.run/logo
-  homepage: https://www.halo.run/store/apps/app-KgWqR
-  repo: https://github.com/halo-dev/theme-earth
-  issues: https://github.com/halo-dev/theme-earth/issues
+  homepage: https://github.com/AZCodingAccount/theme-earth-next
+  repo: https://github.com/AZCodingAccount/theme-earth-next
+  issues: https://github.com/AZCodingAccount/theme-earth-next/issues
   settingName: "theme-earth-setting"
   configMapName: "theme-earth-configMap"
   version: 1.12.4
   requires: ">=2.20.0"
   license:
     - name: "GPL-3.0"
-      url: "https://github.com/halo-dev/theme-earth/blob/main/LICENSE"
+      url: "https://github.com/AZCodingAccount/theme-earth-next/blob/main/LICENSE"
