@@ -507,3 +507,11 @@ spec:
           name: enable_page_bg_image
           label: 展示文章页背景图
           value: true
+        - $formkit: checkbox
+          name: enable_post_card_animatation
+          label: 开启文档hover动画
+          value: false
+        - $formkit: checkbox
+          name: enable_post_card_border
+          label: 开启卡片hover边框
+          value: false
