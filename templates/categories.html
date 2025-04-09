@@ -4,8 +4,6 @@
   th:replace="~{modules/layout :: html(title = |#{page.categories.title} - ${site.title}|, hero = null, content = ~{::content}, head = null, footer = null, sidebar = null, contentClass = null)}"
 >
   <th:block th:fragment="content">
-    <th:block th:replace="~{modules/category-filter}" />
-
     <th:block th:with="categories = ${categoryFinder.listAsTree()}">
       <th:block
         th:with="posts = ${postFinder.listByCategory(1,10,categories[0].metadata.name)},list_layout=${theme.config.layout.post_list_layout}"
@@ -13,7 +11,7 @@
         <div
           id="post-list"
           th:if="${posts.total gt 0}"
-          class="mt-6 grid grid-cols-1 gap-6"
+          class="grid grid-cols-1 gap-6"
           th:classappend="|${list_layout == 'grid_3' ? 'md:grid-cols-2 xl:grid-cols-3' : ''} ${list_layout == 'grid_2' ? 'md:grid-cols-2' : ''}|"
         >
           <th:block th:each="post : ${posts.items}">
